@@ -1,0 +1,32 @@
+#! /bin/bash
+
+set -e
+
+ORG=$1
+NAME=$2
+
+WORK_DIR=/tmp/$ORG/$NAME
+
+INSTALL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+echo "Starting to build docs for $ORG/$NAME. Work Dir is $WORK_DIR"
+
+rm -fr $WORK_DIR
+mkdir -p $WORK_DIR
+
+cd $WORK_DIR
+
+echo "Cloning $ORG/$NAME"
+
+git init .
+git remote add -f origin git@github.com:$ORG/$NAME
+
+git config core.sparsecheckout true
+
+echo "docs" >> .git/info/sparse-checkout
+
+git pull origin master
+
+echo "Copying jekyll files"
+
+cp -v $INSTALL_DIR/jekyll/* .
