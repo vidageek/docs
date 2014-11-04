@@ -18,15 +18,8 @@ cd $WORK_DIR
 
 echo "Cloning $ORG/$NAME"
 
-git init .
-git remote add -f origin git@github.com:$ORG/$NAME
-
-git config core.sparsecheckout true
-
-echo "docs" >> .git/info/sparse-checkout
-
-git pull origin master
+git clone --depth=1 git@github.com:$ORG/$NAME
 
 echo "Copying jekyll files"
 
-cp -v $INSTALL_DIR/jekyll/* .
+cp -v $INSTALL_DIR/jekyll/* docs/.
