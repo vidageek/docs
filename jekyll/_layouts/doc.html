@@ -5,7 +5,8 @@
     </head>
     <body>
       <header>
-         logo e texto do projeto
+        <img src="/{{site.project}}/images/logo.png">
+        <span class="slogan">{{site.slogan}}</span>
       </header>
 
       <aside>
@@ -13,9 +14,20 @@
           <a href="https://travis-ci.org/{{site.organization}}/{{site.project}}">
             <img src="https://travis-ci.org/{{site.organization}}/{{site.project}}.svg?branch=master" alt="{{site.name}} Build Status">
           </a>
-            Last Stable
-            Last Snapshot
-            Donate
+          Download
+          <a href="http://repo1.maven.org/maven2/{{site.group_id}}/{{site.project}}/{{site.last_release}}">Stable</a>
+          <a href="/{{site.project}}/{{site.organization}}-{{site.project}}-SNAPSHOT.jar">Snapshot</a>
+          
+            <!-- Begin PayPal Donation button -->
+			<div class="donation">
+				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="MCKWXARJ3LF3C">
+					<input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
+					<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form>
+			</div>
+			<!-- End PayPal Donation button -->
         </section>
         <ul class="menu">
           <li><a href="/{{site.project}}/">{{ site.name }}</a></li>
