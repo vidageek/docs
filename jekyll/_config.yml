@@ -5,3 +5,5 @@ pygments: true
 exclude: ['Gemfile', 'Gemfile.lock']
 markdown: rdiscount
 
+projects:
+  - 'vidageek crawler'

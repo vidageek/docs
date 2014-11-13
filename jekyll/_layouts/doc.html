@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>{{ page.title }}</title>
+      <title>{{ site.name }} - {{ page.title }}</title>
     </head>
     <body>
       <header>
-
+         logo e texto do projeto
       </header>
 
       <aside>
+        <ul>
+        {% for page in site.pages %}
+          <li><a href="{{page.url}}">{{ page.title }}</a></li>
+        {% endfor %}
+        </ul>
       </aside>
 
       <article>
-      </article>
         {{ content }}
+      </article>
       <footer>
+        {% if site.lang = "pt" %}
+            Um projeto do <a href="http://www.vidageek.net">VidaGeek.net</a>
+        {% else %}
+            A <a href="http://www.vidageek.net">VidaGeek.net</a> project
+        {% endif %}
       </footer>
     </body>
 </html>
