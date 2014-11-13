@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/bash --login
 
 set -e
 
@@ -23,3 +23,15 @@ git clone --depth=1 git@github.com:$ORG/$NAME .
 echo "Copying jekyll files"
 
 cp -rv $INSTALL_DIR/jekyll/* docs/.
+
+cd docs
+
+echo "Carregando RVM"
+source ~/.rvm/scripts/rvm
+
+rvm use 2.1.2
+bundle install
+jekyll build
+
+echo "Deploying!"
+s3-jekyll-deploy projetos.vidageek.net
