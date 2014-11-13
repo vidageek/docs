@@ -11,14 +11,14 @@ INSTALL_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 echo "Starting to build docs for $ORG/$NAME. Work Dir is $WORK_DIR"
 
-rm -fr $WORK_DIR
+#rm -fr $WORK_DIR
 mkdir -p $WORK_DIR
 
 cd $WORK_DIR
 
 echo "Cloning $ORG/$NAME"
 
-git clone --depth=1 git@github.com:$ORG/$NAME .
+#git clone --depth=1 git@github.com:$ORG/$NAME .
 
 echo "Copying jekyll files"
 
@@ -34,4 +34,4 @@ bundle install
 jekyll build --config _config.yml,_site.yml
 
 echo "Deploying!"
-s3-jekyll-deploy projetos.vidageek.net
+#s3-jekyll-deploy projetos.vidageek.net

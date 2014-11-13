@@ -9,16 +9,29 @@
       </header>
 
       <aside>
-        <ul>
-        {% for page in site.pages %}
-          <li><a href="{{page.url}}">{{ page.title }}</a></li>
-        {% endfor %}
+        <section class="status">
+          <a href="https://travis-ci.org/{{site.organization}}/{{site.project}}">
+            <img src="https://travis-ci.org/{{site.organization}}/{{site.project}}.svg?branch=master" alt="{{site.name}} Build Status">
+          </a>
+            Last Stable
+            Last Snapshot
+            Donate
+        </section>
+        <ul class="menu">
+          <li><a href="/{{site.project}}/">{{ site.name }}</a></li>
+          {% capture index_page %}/{{site.project}}/index.html{% endcapture %}
+          {% for page in site.pages %}
+              {% if page.url != index_page %}
+                <li><a href="{{page.url}}">{{ page.title }}</a></li>
+              {% endif %}
+          {% endfor %}
         </ul>
       </aside>
 
       <article>
         {{ content }}
       </article>
+
       <footer>
         {% if site.lang == "pt" %}
             Um projeto do <a href="http://www.vidageek.net">VidaGeek.net</a>

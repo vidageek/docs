@@ -1,9 +1,16 @@
 # standard jekyll configuration
 
 permalink: date
-pygments: true
+highlighter: pygments
 exclude: ['Gemfile', 'Gemfile.lock']
 markdown: rdiscount
+
+defaults:
+  -
+    scope:
+      path: "" 
+    values:
+      layout: "doc"
 
 projects:
   - 'vidageek crawler'
