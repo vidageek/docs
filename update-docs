@@ -31,7 +31,7 @@ source ~/.rvm/scripts/rvm
 
 rvm use 2.1.2
 bundle install
-jekyll build --config _config.yaml,_site.yaml
+jekyll build --config _config.yml,_site.yml
 
 echo "Deploying!"
 s3-jekyll-deploy projetos.vidageek.net
