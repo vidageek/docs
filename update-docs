@@ -18,7 +18,7 @@ cd $WORK_DIR
 
 echo "Cloning $ORG/$NAME"
 
-git clone --depth=1 git@github.com:$ORG/$NAME
+git clone --depth=1 git@github.com:$ORG/$NAME .
 
 echo "Copying jekyll files"
 
