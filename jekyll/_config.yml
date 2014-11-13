@@ -2,6 +2,6 @@
 
 permalink: date
 pygments: true
-exclude: ['Rakefile', 'README.md', 'config.rb', 'deploy.sh']
+exclude: ['Gemfile', 'Gemfile.lock']
 markdown: rdiscount
 
