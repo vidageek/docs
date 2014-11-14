@@ -11,6 +11,5 @@ defaults:
       path: "" 
     values:
       layout: "doc"
+      lang: "en_US"
 
-projects:
-  - 'vidageek crawler'

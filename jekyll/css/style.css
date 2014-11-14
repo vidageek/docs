@@ -1,0 +1,48 @@
+p {
+    line-height: 1.7em;
+    margin: 1.2em 0;
+    font-size: inherit;
+    font-size: 120%;
+}
+
+header {
+    height: 150px;
+}
+
+aside, article {
+    display: inline-block;
+}
+
+aside {
+    width: 20%;
+    text-align: right;
+    margin-right: 60px;
+    vertical-align: top;
+}
+
+article {
+    width: 70%;
+    max-width: 700px;
+}
+
+h2, .status h3 {
+    margin-top: 0px;
+}
+
+footer {
+    display: block;
+    text-align: center;
+    height: 100px;
+    padding-top: 45px;
+}
+
+.menu li {
+    list-style: none;
+    margin-top: 15px;
+}
+
+.menu {
+    font-size: 20px;
+}
+
+

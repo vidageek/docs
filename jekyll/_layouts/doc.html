@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{page.lang}}">
     <head>
       <title>{{ site.name }} - {{ page.title }}</title>
+      <link href="/home/setf/Documents/workspace-bash/vidageek-docs/jekyll/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/home/setf/Documents/workspace-bash/vidageek-docs/jekyll/css/prettify.css" rel="stylesheet">
+      <link href="/home/setf/Documents/workspace-bash/vidageek-docs/jekyll/css/style.css" rel="stylesheet">
+      <meta property="og:image" content="http://www.vidageek.net/images/logo.png" />
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     </head>
     <body>
       <header>
@@ -11,18 +16,19 @@
 
       <aside>
         <section class="status">
+          <h3>Download</h3>
+          <a href="http://repo1.maven.org/maven2/{{site.group_id}}/{{site.project}}/{{site.last_release}}">Stable</a>
+          <a href="/{{site.project}}/{{site.organization}}-{{site.project}}-SNAPSHOT.jar">Snapshot</a>
+          <hr>
           <a href="https://travis-ci.org/{{site.organization}}/{{site.project}}">
             <img src="https://travis-ci.org/{{site.organization}}/{{site.project}}.svg?branch=master" alt="{{site.name}} Build Status">
           </a>
-          Download
-          <a href="http://repo1.maven.org/maven2/{{site.group_id}}/{{site.project}}/{{site.last_release}}">Stable</a>
-          <a href="/{{site.project}}/{{site.organization}}-{{site.project}}-SNAPSHOT.jar">Snapshot</a>
           
             <!-- Begin PayPal Donation button -->
 			<div class="donation">
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
 					<input type="hidden" name="cmd" value="_s-xclick">
-					<input type="hidden" name="hosted_button_id" value="MCKWXARJ3LF3C">
+                    <input type="hidden" name="hosted_button_id" value="{{site.paypal}}">
 					<input type="image" src="https://www.paypal.com/en_GB/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online.">
 					<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
 				</form>
@@ -41,15 +47,23 @@
       </aside>
 
       <article>
+        <h2>{{page.title}}</h2>
         {{ content }}
       </article>
 
       <footer>
-        {% if site.lang == "pt" %}
+        {% if page.lang == 'pt_BR' %}
             Um projeto do <a href="http://www.vidageek.net">VidaGeek.net</a>
-        {% else %}
+        {% elsif page.lang == 'en_US' %}
             A <a href="http://www.vidageek.net">VidaGeek.net</a> project
         {% endif %}
       </footer>
+
+      <script src="/home/setf/Documents/workspace-bash/vidageek-docs/jekyll/js/prettify.js" type="text/javascript">
+      </script>
+      <script>
+          [].slice.call(document.getElementsByTagName("pre")).map(function(e){e.className = "prettyprint"});
+          prettyPrint();
+      </script>
     </body>
 </html>
