@@ -29,8 +29,8 @@ cd docs
 echo "Carregando RVM"
 source ~/.rvm/scripts/rvm
 
-rvm use 2.1.2
-bundle install
+#rvm use 2.1.2
+#bundle install
 jekyll build --config _config.yml,_site.yml
 
 echo "Deploying!"
