@@ -65,3 +65,15 @@ footer {
     margin-left: 68px;
     margin-top: 5px;
 }
+
+#contributors div {
+    display: inline-block;
+    text-align: center;
+    margin: 15px;
+}
+
+#contributors div img {
+    max-width: 100px;
+    display: block;
+    margin-bottom: 15px;
+}

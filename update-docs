@@ -24,6 +24,10 @@ echo "Copying jekyll files"
 
 cp -rv $INSTALL_DIR/jekyll/* docs/.
 
+echo "Copying project files"
+
+cp -rv $INSTALL_DIR/project/* docs/$NAME/.
+
 cd docs
 
 echo "Carregando RVM"
