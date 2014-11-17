@@ -13,3 +13,6 @@ defaults:
       layout: "doc"
       lang: "en_US"
 
+organization: vidageek
+group_id: net/vidageek
+group-id: net.vidageek
