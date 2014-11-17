@@ -7,6 +7,8 @@ p {
 
 header {
     height: 150px;
+    padding-left: 98px;
+    margin-top: 30px;
 }
 
 aside, article {
@@ -45,4 +47,21 @@ footer {
     font-size: 20px;
 }
 
+.info {
+    height: 30px;
+    margin-top: 10px;
+}
 
+.logo {
+    border: 0px;
+    width: 250px;
+}
+
+.slogan {
+    display: block;
+    font-size: 19px;
+    font-style: italic;
+    margin-bottom: 0;
+    margin-left: 68px;
+    margin-top: 5px;
+}

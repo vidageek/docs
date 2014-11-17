@@ -2,15 +2,26 @@
 <html lang="{{page.lang}}">
     <head>
       <title>{{ site.name }} - {{ page.title }}</title>
-      <link href="/home/setf/Documents/workspace-bash/vidageek-docs/jekyll/css/bootstrap.min.css" rel="stylesheet">
-      <link href="/home/setf/Documents/workspace-bash/vidageek-docs/jekyll/css/prettify.css" rel="stylesheet">
-      <link href="/home/setf/Documents/workspace-bash/vidageek-docs/jekyll/css/style.css" rel="stylesheet">
-      <meta property="og:image" content="http://www.vidageek.net/images/logo.png" />
+      <link href="/css/bootstrap.min.css" rel="stylesheet">
+      <link href="/css/prettify.css" rel="stylesheet">
+      <link href="/css/style.css" rel="stylesheet">
+      <meta property="og:image" content="/{{site.project}}/images/logo.png" />
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+      <!--Google Tracking Script -->
+		<script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try {
+                var pageTracker = _gat._getTracker("UA-1508082-4");
+                pageTracker._trackPageview();
+                } catch(err) {}
+        </script>
     </head>
     <body>
       <header>
-        <img src="/{{site.project}}/images/logo.png">
+        <img class="logo" src="/{{site.project}}/images/logo.png">
         <span class="slogan">{{site.slogan}}</span>
       </header>
 
@@ -20,10 +31,12 @@
           <a href="http://repo1.maven.org/maven2/{{site.group_id}}/{{site.project}}/{{site.last_release}}">Stable</a>
           <a href="/{{site.project}}/{{site.organization}}-{{site.project}}-SNAPSHOT.jar">Snapshot</a>
           <hr>
+          <div class="info">
           <a href="https://travis-ci.org/{{site.organization}}/{{site.project}}">
             <img src="https://travis-ci.org/{{site.organization}}/{{site.project}}.svg?branch=master" alt="{{site.name}} Build Status">
           </a>
-          
+          </div>  
+          <div class="info">
             <!-- Begin PayPal Donation button -->
 			<div class="donation">
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -34,6 +47,7 @@
 				</form>
 			</div>
 			<!-- End PayPal Donation button -->
+          </div>
         </section>
         <ul class="menu">
           <li><a href="/{{site.project}}/">{{ site.name }}</a></li>
