@@ -17,11 +17,12 @@ mkdir -p $WORK_DIR
 
 cd $WORK_DIR
 
-echo "Cloning/Copying $ORG/$NAME"
 
 if [ -d $LOCAL_FOLDER ]; then
+  echo "Copying $LOCAL_FOLDER/docs to $WORK_DIR"
   cp -vR $LOCAL_FOLDER/docs .
 else
+  echo "Cloning $ORG/$NAME"
   git clone --depth=1 git@github.com:$ORG/$NAME .
 fi
 
