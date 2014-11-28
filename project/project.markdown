@@ -19,7 +19,7 @@ We deploy our jars to Maven Central Repository, so you can easily add it as depe
 #### Gradle
 
     dependencies {
-        '{{site.group-id}}:{{site.project}}:{{site.last_release}}'
+        compile '{{site.group-id}}:{{site.project}}:{{site.last_release}}'
     }
 
 #### SBT
