@@ -4,6 +4,7 @@ set -e
 
 ORG=$1
 NAME=$2
+LOCAL_FOLDER=$3
 
 WORK_DIR=/tmp/$ORG/$NAME
 
@@ -16,9 +17,13 @@ mkdir -p $WORK_DIR
 
 cd $WORK_DIR
 
-echo "Cloning $ORG/$NAME"
+echo "Cloning/Copying $ORG/$NAME"
 
-git clone --depth=1 git@github.com:$ORG/$NAME .
+if [ -d $LOCAL_FOLDER ]; then
+  cp -vR $LOCAL_FOLDER/docs .
+else
+  git clone --depth=1 git@github.com:$ORG/$NAME .
+fi
 
 echo "Copying jekyll files"
 
@@ -34,8 +39,8 @@ echo "Carregando RVM"
 source ~/.rvm/scripts/rvm
 
 rvm use 2.1.2
-bundle install
+#bundle install
 jekyll build --config _config.yml,_site.yml
 
 echo "Deploying!"
-s3-jekyll-deploy projetos.vidageek.net
+#s3-jekyll-deploy projetos.vidageek.net

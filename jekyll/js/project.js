@@ -2,7 +2,7 @@
 layout: 
 ---
     if($('#contributors').length > 0) {	
-		$.getJSON("https://api.github.com/repos/{{site.organization}}/{{site.project}}/contributors?callback=?",
+		$.getJSON("https://api.github.com/repos/" + org + "/"+ project + "/contributors?callback=?",
 			function(data){
 				var contributors = "";
 				$.each(data.data, function(i, e) {
